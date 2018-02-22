@@ -19,7 +19,22 @@
 		</div>
 
 		<h4>Projects</h4>
-		{{#each projects}}
+		{{#if viewAlt}}
+			<div class="project" id="{{id}}">
+				<div class="thumbnail">
+					
+					<a href="/project/{{id}}">
+						<!--project["viewAlt"]=false;
+						project["viewAlt"]=true;-->
+						<img src="images/{{image}}" alt="Lorem Pixel image" class="img-responsive">
+						<h4>{{title}}</h4>
+					</a>
+					<div class="likeCtr"> "Min!"<button class="btn btn-default likeBtn">Like</button></div>
+					<div class="details"></div>
+				</div>
+			</div>
+			{{else}}
+			{{#each projects}}
 			<div class="project" id="{{id}}">
 				<div class="thumbnail">
 					<a href="/project/{{id}}">
@@ -30,11 +45,28 @@
 					<div class="details"></div>
 				</div>
 			</div>
-		{{/each}}
+		<!--{{/each}}-->
+		{{/if}}
+
+
+
 
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/introHCI.js"></script>
+
+
+	<!--tracking-->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114627754-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-114627754-1');
+</script>
+
 </body>
 </html>
